@@ -16,7 +16,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         oscript_version: ['1.4.0']
-        package_mask: ["project-*.ospx"]
+        package_mask: ["v8storage-*.ospx"]
         
     steps:
       # Загрузка проекта

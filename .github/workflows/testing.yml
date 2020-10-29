@@ -40,7 +40,7 @@ jobs:
       - name: Тестирование Unit
         run: oscript ./tasks/test.os true
       
-      - name: Тестирование Integrated
-        run: | 
-          docker run -e OSCRIPT_VERSION=${{ matrix.oscript_version }} -v $(pwd):/work_dir harmit/ci-image sh -c 'cd /work_dir; sh /work_dir/travis-ci.sh; exit'
+      # - name: Тестирование Integrated
+      #   run: | 
+      #     docker run -e OSCRIPT_VERSION=${{ matrix.oscript_version }} -v $(pwd):/work_dir harmit/ci-image sh -c 'cd /work_dir; sh /work_dir/travis-ci.sh; exit'
       # grep 'Результат прогона тестов <Да>' /tmp/test.log

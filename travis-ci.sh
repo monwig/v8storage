@@ -11,8 +11,6 @@ opm install 1bdd;
 opm install notify;
 opm install coverage;
 
-opm list
-
 opm run coverage; 
 
 

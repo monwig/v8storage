@@ -31,6 +31,8 @@ jobs:
         uses: otymko/setup-onescript@v1.0
         with:
           version: ${{ matrix.oscript_version }}
+	env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
       # Установка зависимостей пакета
       - name: Установка зависимостей
@@ -41,6 +43,8 @@ jobs:
           opm install 1bdd 
           opm install notify
           opm install coverage
+	env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
       # Запуск тестов и сбор покрытия кода
       - name: Покрытие кода
@@ -53,6 +57,9 @@ jobs:
 
       - name: Установка Sonar-scanner
         uses: warchant/setup-sonar-scanner@v1
+	env:
+          # отключение безопасности установки, от 2020-10-01
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
       # Анализ проекта в SonarQube (ветка)
       - name: Анализ в SonarQube (branch)
